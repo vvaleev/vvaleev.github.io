@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Vadim Valeev" name="author">
+        <meta content="1.0.0-pre-alpha.2+20191014" name="version">
+
+        <title>SemVerEditor</title>
+
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="styles/css/lib/bootstrap.min.css" rel="stylesheet">
+        <link href="styles/css/lib/magnific-popup.css" rel="stylesheet">
+        <link href="styles/css/plugins/fonts.css" rel="stylesheet">
+        <link href="styles/css/plugins/style.css" rel="stylesheet">
+        <link href="styles/css/styles/style.css" rel="stylesheet">
+
+        <script src="scripts/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="scripts/js/lib/bootstrap.min.js"></script>
+        <script src="scripts/js/lib/jquery.magnific-popup.min.js"></script>
+        <script src="scripts/js/plugins/form.js"></script>
+        <script src="scripts/js/plugins/modal.js"></script>
+        <script src="scripts/js/plugins/dom.js"></script>
+        <script src="scripts/js/plugins/local_storage.js"></script>
+        <script src="scripts/js/lang/lang.js"></script>
+        <script src="scripts/js/scripts/version.js"></script>
+        <script src="scripts/js/scripts/project.js"></script>
+        <script src="scripts/js/scripts/ui.js"></script>
+        <script src="scripts/js/scripts/script.js"></script>
+        <script>
+            (function(window) {
+                'use strict';
+
+                window.demoProject = new Project('SemVerEditor v1.0.0-pre-alpha.2+20191014');
+            })(window);
+        </script>
+    </head>
+    <body>
+        <div class="semver__wrapper">
+            <div class="semver__header">
+                <div class="semver__header_title text-info text-center" data-semver="title">SemVerEditor</div>
+                <div class="semver__header_project-caption text-info text-center" data-semver="title-project">
+                    SemVerEditor
+                </div>
+                <span class="semver__header_project-remove" data-semver="button-delete-project" style="display: none">
+                    x
+                </span>
+            </div>
+
+            <div class="semver__content">
+                <div class="semver__content_start-screen" data-semver="start-screen" style="display: block">
+                    <button class="semver__content_start-button btn btn-success" data-semver="button-to-create-project"></button>
+                </div>
+                <div class="semver__content_second-screen" data-semver="second-screen" style="display: none">
+                    <table class="semver__content_table table text-center">
+                        <thead>
+                            <tr>
+                                <th data-semver="column-1"></th>
+                                <th data-semver="column-2"></th>
+                            </tr>
+                        </thead>
+                        <tbody data-semver="table-body"></tbody>
+                    </table>
+                </div>
+                <div class="semver__content_third-screen" data-semver="third-screen" style="display: none">
+                    <form action="" class="text-center" data-form="update-version">
+                        <div class="semver__content_form-versions" data-semver="form-list-body-versions"></div>
+                        <button class="btn btn-success" data-loading-text="Sending data..." data-semver="update-button"></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="semver__footer text-center">
+                <a class="semver__footer_link" href="http://github.com/vvaleev/SemVerEditor" target="_blank">
+                    View Source on GitHub →
+                </a>
+                <span class="semver__footer_delimiter">|</span>
+                <a class="semver__footer_link" href="https://t.me/SemVerChannel" target="_blank">
+                    Telegram channel @SemVerChannel
+                </a>
+                <span class="semver__footer_delimiter">| Language:</span>
+                <a class="semver__footer_link" href="javascript:location.search = 'lang=en'">
+                    English
+                </a>
+                <span class="semver__footer_delimiter">|</span>
+                <a class="semver__footer_link" href="javascript:location.search = 'lang=ru'">
+                    Русский
+                </a>
+            </div>
+        </div>
+
+        <div class="semver__modal_add-project text-center white-popup mfp-hide" data-semver="add-project-modal-window-body-template">
+            <form action="" data-form="add-project">
+                <label>
+                    <span class="text-uppercase">{{PROJECT_NAME}}:</span>
+                    <br />
+                    <br />
+                    <input class="form-control" data-required="true" name="PROJECT_NAME" type="text" value="">
+                    <br />
+                    <button class="btn btn-success" data-loading-text="Sending data..." data-semver="add-button"></button>
+                </label>
+            </form>
+        </div>
+
+        <script data-semver="table-body-template" type="html/template">
+            <tr class="{{CLASS_NAME}}">
+                <td>{{DATE}}</td>
+                <td>{{VERSION}}</td>
+            </tr>
+        </script>
+
+        <script data-semver="form-list-body-versions-template" type="html/template">
+            <div class="semver__content_form-version-block">
+                <span class="semver__content_form-version-info-block">
+                    <span class="semver__content_form-version-info-icon">?</span>
+                    <span class="semver__content_form-version-info">
+                        <span class="semver__content_form-version-name">{{VERSION_NAME}}</span>
+                        <hr />
+                        <span class="semver__content_form-version-description">{{VERSION_DESCRIPTION}}</span>
+                    </span>
+                </span>
+                <label class="semver__content_form-version-option">
+                    <input type="radio" name="VERSION" value="{{VERSION_OPTION_VALUE}}">
+                    {{VERSION_OPTION}}
+                </label>
+            </div>
+        </script>
+    </body>
+</html>

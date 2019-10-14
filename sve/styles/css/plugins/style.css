@@ -1,0 +1,10 @@
+body {
+}
+
+.white-popup {
+    position         : relative;
+    background-color : white;
+    padding          : 40px 20px;
+    max-width        : 500px;
+    margin           : 20px auto;
+}
