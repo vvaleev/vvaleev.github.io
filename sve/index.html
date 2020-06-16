@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="Vadim Valeev" name="author">
-        <meta content="1.0.0-pre-alpha.2+20191014" name="version">
+        <meta content="1.0.0-pre-alpha.3+20200616" name="version">
 
         <title>SemVerEditor</title>
 
@@ -30,7 +30,7 @@
             (function(window) {
                 'use strict';
 
-                window.demoProject = new Project('SemVerEditor v1.0.0-pre-alpha.2+20191014');
+                window.demoProject = new Project('SemVerEditor v1.0.0-pre-alpha.3+20200616');
             })(window);
         </script>
     </head>
@@ -54,7 +54,7 @@
                     <table class="semver__content_table table text-center">
                         <thead>
                             <tr>
-                                <th data-semver="column-1"></th>
+                                <!-- <th data-semver="column-1"></th> -->
                                 <th data-semver="column-2"></th>
                             </tr>
                         </thead>
@@ -103,7 +103,7 @@
 
         <script data-semver="table-body-template" type="html/template">
             <tr class="{{CLASS_NAME}}">
-                <td>{{DATE}}</td>
+                <!-- <td>{{DATE}}</td> -->
                 <td>{{VERSION}}</td>
             </tr>
         </script>
